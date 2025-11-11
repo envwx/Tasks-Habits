@@ -44,8 +44,6 @@ Tasks&Habits, an app to keep on track of your tasks and able to create habits th
 ## ***Project Preview***
 
 ![SignInPage]()
-***
-![Camera Page]()
   ***
 ![ChallengePage]()
 
