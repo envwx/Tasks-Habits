@@ -3,6 +3,7 @@
 
 ### By: Naser hubaishi
 ### | [Naser GitHub](https://github.com/envwx)
+### | [Trello](https://trello.com/b/3GzNRerW/my-trello-board)
 ***
 ### ***Description***
 Tasks&Habits, an app to keep on track of your tasks and able to create habits that matches your daily life
@@ -12,11 +13,8 @@ Tasks&Habits, an app to keep on track of your tasks and able to create habits th
 ***
 ## ERD & Figma
 ###  ![ERD](./images/ERD.png)
-### | [Figma Link](https://trello.com/b/3GzNRerW/my-trello-board)
+### | [Figma Link]()
 ***
-## ***App Hierarchy***
-![AppHierarchy]()
-
 ### ***Technologies used in our project***
   *
   *
