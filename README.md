@@ -11,7 +11,7 @@ Tasks&Habits, an app to keep on track of your tasks and able to create habits th
 ####
 ***
 ## ERD & Figma
-###  ![ERD]()
+###  ![ERD](./images/ERD.png)
 ### | [Figma Link](https://trello.com/b/3GzNRerW/my-trello-board)
 ***
 ## ***App Hierarchy***
@@ -45,7 +45,6 @@ Tasks&Habits, an app to keep on track of your tasks and able to create habits th
 
 ![SignInPage]()
   ***
-![ChallengePage]()
 
 ## ***Future Work***
 *
