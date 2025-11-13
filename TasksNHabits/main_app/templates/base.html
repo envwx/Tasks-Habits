@@ -19,6 +19,7 @@
           <li><a href="{% url 'about' %}" class="left brand-logo">&nbsp;&nbsp;TasksNHabits</a></li>
         </ul>
         <ul class="right">
+          <a href="{% url 'task_list' %}">My Tasks</a>
           <li><a href="{% url 'about' %}">About</a></li>
           {% if user.is_authenticated %}
             <li><a href="{% url 'home' %}">Home</a></li>
