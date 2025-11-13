@@ -25,3 +25,7 @@ def signup(request):
         form = UserCreationForm()
     context = {'form': form, 'error_message': error_message}
     return render(request, 'registration/signup.html',context)
+
+@login_required
+def task_details(request, task_id):
+    task = Task.objects.get(id=task_id)

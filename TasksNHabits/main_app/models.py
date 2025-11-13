@@ -15,4 +15,13 @@ class Task(models.Model):
         return self.title
     
     def get_absolute_url(self):
-        return reverse("task_details", kwargs={"task_id": self.id})
+        return reverse("tasks_details", kwargs={"task_id": self.id})
+    
+class Habit(models.Model):
+    name = models.CharField(max_length=200)
+    description = models.TextField(blank=True)
+    created_date = models.DateTimeField(auto_now_add=True)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.name
