@@ -11,7 +11,8 @@ from .forms import HabitForm
 
 def home(request):
     tasks = Task.objects.filter(user=request.user)
-    return render(request, 'home.html', {'tasks': tasks})
+    habits = Habit.objects.filter(user=request.user)
+    return render(request, 'home.html', {'tasks': tasks, 'habits': habits})
 
 def about(request):
     return render(request, 'about.html')

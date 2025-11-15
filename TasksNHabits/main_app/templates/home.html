@@ -20,4 +20,23 @@
   <li>No tasks yet <a href="{% url 'task_create' %}">Create Task</a></li>
   {% endfor %}
 </ul>
+
+<h3>Your Habits</h3>
+<ul>
+  {% for habit in habits %}
+  <li>
+    <a href="{% url 'habit_details' habit.id %}">{{ habit.name }}</a>
+    <br>
+    <small>{{ habit.description }}</small>
+  </br>
+    {% if habit.is_completed %}
+    <span style="color: green;"> Completed</span>
+    {% else %}
+    <span style="color: red;"> Not Completed</span>
+    {% endif %}
+  </li>
+  {% empty %}
+  <li>No habits yet <a href="{% url 'habit_create' %}">add a habit</a></li>
+  {% endfor %}
+</ul>
 {% endblock %}
