@@ -1,6 +1,23 @@
-{% extends 'base.html' %} {% block content %}
-<title>Tasks N Habits</title>
-<h1>
-  Hello!
-  <h1>{% endblock %}</h1>
-</h1>
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Hello!</h1>
+<h3>Your Tasks</h3>
+<ul>
+  {% for task in tasks %}
+  <li>
+    <a href="{% url 'task_details' task.id %}">{{ task.title }}</a>
+    <br>
+    <small>{{ task.description }}</small>
+  </br>
+    {% if task.is_completed %}
+    <span style="color: green;"> Completed</span>
+    {% else %}
+    <span style="color: red;"> Not Completed</span>
+    {% endif %}
+  </li>
+  {% empty %}
+  <li>No tasks yet <a href="{% url 'task_create' %}">Create Task</a></li>
+  {% endfor %}
+</ul>
+{% endblock %}

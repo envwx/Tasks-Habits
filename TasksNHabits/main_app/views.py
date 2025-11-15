@@ -8,7 +8,8 @@ from .forms import TaskForm
 # Create your views here.
 
 def home(request):
-    return render(request, 'home.html')
+    tasks = Task.objects.filter(user=request.user)
+    return render(request, 'home.html', {'tasks': tasks})
 
 def about(request):
     return render(request, 'about.html')
