@@ -4,6 +4,8 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import login
 from .models import Task
 from .forms import TaskForm
+from .models import Habit
+from .forms import HabitForm
 
 # Create your views here.
 
@@ -83,3 +85,57 @@ def task_complete(request, task_id):
         task.is_completed = True
         task.save()
         return redirect('task_details', task_id=task.id)
+@login_required
+def habit_details(request, habit_id):
+    habit = Habit.objects.get(id=habit_id)
+    return render(request, 'habits/habit_details.html', {'habit': habit})
+
+def habit_list(request):
+    habits = Habit.objects.filter(user=request.user)
+    return render(request, 'habits/index.html', {'habits': habits})
+
+@login_required
+def habit_create(request):
+    if request.method == 'POST':
+        form = HabitForm(request.POST)
+        if form.is_valid():
+            habit = form.save(commit=False)
+            habit.user = request.user
+            habit.save()
+            return redirect('habit_list')
+
+    else:
+        form = HabitForm()
+    return render(request, 'habits/form.html', {'form': form})
+
+@login_required
+def habit_edit(request, habit_id):
+    habit = Habit.objects.get(id=habit_id)
+    if habit.user != request.user:
+        return redirect('habit_list')
+
+    if request.method == 'POST':
+        form = HabitForm(request.POST, instance=habit)
+        if form.is_valid():
+            form.save()
+            return redirect('habit_details', habit_id=habit.id)
+
+    else:
+        form = HabitForm(instance=habit)
+
+        return render(request, 'habits/form.html', {'form': form})
+
+@login_required
+def habit_delete(request, habit_id):
+    habit = Habit.objects.get(id=habit_id)
+    if habit.user == request.user:
+        habit.delete()
+        return redirect('habit_list')
+
+@login_required
+def habit_complete(request, habit_id):
+    habit = Habit.objects.get(id=habit_id)
+    if habit.user == request.user:
+        habit.is_completed = True
+        habit.save()
+        return redirect('habit_details', habit_id=habit.id)
