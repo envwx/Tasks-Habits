@@ -3,7 +3,9 @@ body {
   background-color: #f9f9f9;
   color: #333;
   margin: 0;
-  padding: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 .nav-wrapper {
@@ -57,6 +59,7 @@ body {
 }
 
 main.container {
+  flex: 1;
   background-color: #fff;
   margin-top: 30px;
   padding: 30px;
@@ -192,7 +195,9 @@ h3 {
   font-family: 'Arial', sans-serif;
 }
 
-.btn {
+/* Buttons */
+.btn,
+.task-btn {
   display: inline-block;
   padding: 0.5rem 1rem;
   background-color: #4caf50;
@@ -203,30 +208,32 @@ h3 {
   transition: background-color 0.3s;
 }
 
-.btn:hover {
+.btn:hover,
+.task-btn:hover {
   background-color: #45a049;
 }
 
-.btn-new-habit {
-  margin-bottom: 1rem;
-}
-
-.habit-list {
+/* Lists */
+.habit-list,
+.tasks-list {
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
   padding: 0;
-  justify-content: center;
+  justify-content: flex-start; /* left to right */
   margin: 0 auto;
+  list-style: none;
 }
 
-.habit-item {
+/* Items */
+.habit-item,
+.task-item {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 0.5rem 1rem;
-  min-width: 150px;
-  max-width: 180px;
+  padding: 0.7rem 1.2rem;
+  min-width: 180px; /* slightly longer box */
+  max-width: 220px;
   border: 1px solid #ddd;
   border-radius: 5px;
   background-color: #f9f9f9;
@@ -234,37 +241,219 @@ h3 {
   text-align: center;
 }
 
-.habit-item:hover {
+.habit-item:hover,
+.task-item:hover {
   transform: translateY(-2px);
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
-.habit-link {
+/* Links */
+.habit-link,
+.task-link {
   text-decoration: none;
   color: #333;
   font-weight: 500;
   margin-bottom: 0.3rem;
 }
 
-.habit-link:hover {
+.habit-link:hover,
+.task-link:hover {
   text-decoration: underline;
 }
 
-.habit-status {
-  font-weight: bold;
+/* Status Pills */
+.habit-status,
+.task-status {
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 0.8rem;
 }
 
+/* Completed / Not Completed colors */
 .completed {
-  color: green;
+  background: #d3f9d8;
+  color: #2e8b57;
 }
 
 .not-completed {
-  color: red;
+  background: #ffe1e1;
+  color: #c0392b;
 }
 
-.no-habits {
+/* Empty lists */
+.no-habits,
+.no-tasks {
   text-align: center;
   color: #777;
   font-style: italic;
   padding: 1rem 0;
+}
+
+.task-title {
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.task-desc {
+  margin-bottom: 0.5rem;
+}
+
+.task-status-text {
+  margin-bottom: 0.5rem;
+}
+
+.task-status.completed {
+  background-color: #d3f9d8;
+  color: #2e8b57;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-weight: 600;
+}
+
+.task-status.not-completed {
+  background-color: #ffe1e1;
+  color: #c0392b;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-weight: 600;
+}
+
+.task-created {
+  color: #555;
+  margin-bottom: 0.5rem;
+}
+
+.back-link {
+  display: inline-block;
+  margin-top: 1rem;
+  color: #333;
+  text-decoration: underline;
+}
+
+.back-link:hover {
+  color: #000;
+}
+
+.habit-container {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 20px;
+  background: #fafafa;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.habit-title {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.habit-description {
+  font-size: 18px;
+  margin-bottom: 15px;
+}
+
+.status {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 8px 14px;
+  margin-right: 8px;
+  background: #3498db;
+  color: white;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+.btn.red {
+  background: #e74c3c;
+}
+
+.btn.green {
+  background: #2ecc71;
+}
+
+.btn:hover {
+  opacity: 0.85;
+}
+
+.task-container {
+  max-width: 650px;
+  margin: 40px auto;
+  padding: 25px;
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Title + text styling */
+.task-title {
+  font-size: 30px;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.task-desc {
+  font-size: 18px;
+  margin-bottom: 20px;
+  color: #555;
+}
+
+.task-status-text {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.task-status.completed {
+  color: #2ecc71;
+}
+
+.task-status.not-completed {
+  color: #e74c3c;
+}
+
+.task-created {
+  margin-bottom: 20px;
+  color: #777;
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  padding: 8px 14px;
+  margin-right: 8px;
+  background: #3498db;
+  color: white;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: 0.2s ease;
+}
+
+.btn.red {
+  background: #e74c3c;
+}
+
+.btn.green {
+  background: #2ecc71;
+}
+
+.btn:hover {
+  opacity: 0.85;
+}
+
+/* Back link */
+.back-link {
+  display: inline-block;
+  margin-top: 20px;
+  text-decoration: none;
+  color: #3498db;
+  font-weight: bold;
+}
+
+.back-link:hover {
+  text-decoration: underline;
 }

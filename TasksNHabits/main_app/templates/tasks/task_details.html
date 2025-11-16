@@ -1,17 +1,32 @@
 {% extends 'base.html' %}
 {% block content %}
-  <h1>{{ task.title }}</h1>
-  <p>{{ task.description }}</p>
-  <p>Status: {% if task.is_completed %} Completed{% else %} Not completed{% endif %}</p>
-  <p>Created: {{ task.created_date }}</p>
+<div class="task-container">
 
-{% if user == task.user %}
-  <a href="{% url 'task_edit' task.id %}" class="btn">Edit</a>
-  <a href="{% url 'task_delete' task.id %}" class="btn red">Delete</a>
-  {% if not task.is_completed %}
-    <a href="{% url 'task_complete' task.id %}" class="btn green">Mark Complete</a>
+  <h1 class="task-title">{{ task.title }}</h1>
+  <p class="task-desc">{{ task.description }}</p>
+
+  <p class="task-status-text">
+    Status:
+    {% if task.is_completed %}
+      <span class="task-status completed">Completed</span>
+    {% else %}
+      <span class="task-status not-completed">Not completed</span>
+    {% endif %}
+  </p>
+
+  <p class="task-created">Created: {{ task.created_date }}</p>
+
+  {% if user == task.user %}
+    <a href="{% url 'task_edit' task.id %}" class="btn">Edit</a>
+    <a href="{% url 'task_delete' task.id %}" class="btn red">Delete</a>
+
+    {% if not task.is_completed %}
+      <a href="{% url 'task_complete' task.id %}" class="btn green">Mark Complete</a>
+    {% endif %}
   {% endif %}
-{% endif %}
 
-  <a href="{% url 'task_list' %}">Back to Tasks</a>
+  <a href="{% url 'task_list' %}" class="back-link">Back to Tasks</a>
+
+</div>
 {% endblock %}
+

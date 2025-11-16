@@ -1,17 +1,31 @@
 {% extends 'base.html' %}
 {% block content %}
-  <h1>{{ habit.name }}</h1>
-  <p>{{ habit.description }}</p>
-  <p>Status: {% if habit.is_completed %} Completed{% else %} Not completed{% endif %}</p>
+<div class="habit-container">
+  <h1 class="habit-title">{{ habit.name }}</h1>
+  <p class="habit-description">{{ habit.description }}</p>
+
+  <p class="status">
+    Status:
+    {% if habit.is_completed %}
+      Completed
+    {% else %}
+      Not Completed
+    {% endif %}
+  </p>
+
   <p>Created: {{ habit.created_date }}</p>
 
-{% if user == habit.user %}
-  <a href="{% url 'habit_edit' habit.id %}" class="btn">Edit</a>
-  <a href="{% url 'habit_delete' habit.id %}" class="btn red">Delete</a>
-  {% if not habit.is_completed %}
-    <a href="{% url 'habit_complete' habit.id %}" class="btn green">Mark Complete</a>
-  {% endif %}
-{% endif %}
+  {% if user == habit.user %}
+    <a href="{% url 'habit_edit' habit.id %}" class="btn">Edit</a>
+    <a href="{% url 'habit_delete' habit.id %}" class="btn red">Delete</a>
 
-  <a href="{% url 'habit_list' %}">Back to Habits</a>
+    {% if not habit.is_completed %}
+      <a href="{% url 'habit_complete' habit.id %}" class="btn green">Mark Complete</a>
+    {% endif %}
+  {% endif %}
+
+  <br><br>
+  <a href="{% url 'habit_list' %}" class="btn">Back to Habits</a>
+</div>
 {% endblock %}
+
