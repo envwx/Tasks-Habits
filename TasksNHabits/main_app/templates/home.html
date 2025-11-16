@@ -1,8 +1,8 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h1>Hello!</h1>
-<h3>Your Tasks</h3>
+<h1 class="h-title">Hello {{ user.username }}!</h1>
+<h3>Your Tasks</h3> <a class="small-btn" href="{% url 'task_create' %}">Create</a>
 <ul class="task-list">
   {% for task in tasks %}
   <li>
@@ -21,7 +21,7 @@
   {% endfor %}
 </ul>
 
-<h3>Your Habits</h3>
+<h3>Your Habits</h3> <a class="small-btn" href="{% url 'habit_create' %}">Create</a>
 <ul class="habit-list">
   {% for habit in habits %}
   <li>
