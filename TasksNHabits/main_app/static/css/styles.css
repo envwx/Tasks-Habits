@@ -183,3 +183,88 @@ h3 {
   box-shadow: none;
   padding: 0;
 }
+
+.page-title {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 1rem;
+  text-align: center;
+  font-family: 'Arial', sans-serif;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background-color: #4caf50;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.btn:hover {
+  background-color: #45a049;
+}
+
+.btn-new-habit {
+  margin-bottom: 1rem;
+}
+
+.habit-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  padding: 0;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.habit-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  min-width: 150px;
+  max-width: 180px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  transition: transform 0.2s, box-shadow 0.2s;
+  text-align: center;
+}
+
+.habit-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.habit-link {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  margin-bottom: 0.3rem;
+}
+
+.habit-link:hover {
+  text-decoration: underline;
+}
+
+.habit-status {
+  font-weight: bold;
+}
+
+.completed {
+  color: green;
+}
+
+.not-completed {
+  color: red;
+}
+
+.no-habits {
+  text-align: center;
+  color: #777;
+  font-style: italic;
+  padding: 1rem 0;
+}

@@ -1,21 +1,23 @@
 {% extends 'base.html' %}
 
 {% block content %}
-  <h1>My Habits</h1>{% if user.is_authenticated %}
-    <a href="{% url 'habit_create' %}" class="btn">+ New Habit</a>
-  <ul>
-    {% endif %}
+  <h1 class="page-title">My Habits</h1>
+  {% if user.is_authenticated %}
+    <a href="{% url 'habit_create' %}" class="btn btn-new-habit">+ New Habit</a>
+  {% endif %}
+
+  <ul class="habit-list">
     {% for habit in habits %}
-      <li>
-        <a href="{% url 'habit_details' habit.id %}">{{ habit.name }}</a>
+      <li class="habit-item">
+        <a href="{% url 'habit_details' habit.id %}" class="habit-link">{{ habit.name }}</a>
         {% if habit.is_completed %}
-          Done!
+          <span class="habit-status completed">Done!</span>
         {% else %}
-          not completed
+          <span class="not-completed">Not completed</span>
         {% endif %}
       </li>
     {% empty %}
-      <li>No habits yet!</li>
+      <li class="no-habits">No habits yet!</li>
     {% endfor %}
   </ul>
 {% endblock %}
