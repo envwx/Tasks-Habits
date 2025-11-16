@@ -11,9 +11,9 @@
     <small>{{ task.description }}</small>
   </br>
     {% if task.is_completed %}
-    <span style="color: green;"> Completed</span>
+    <span class="completed"> Completed</span>
     {% else %}
-    <span style="color: red;"> Not Completed</span>
+    <span class="not-completed"> Not Completed</span>
     {% endif %}
   </li>
   {% empty %}
@@ -30,9 +30,9 @@
     <small>{{ habit.description }}</small>
   </br>
     {% if habit.is_completed %}
-    <span style="color: green;"> Completed</span>
+    <span class="completed"> Completed</span>
     {% else %}
-    <span style="color: red;"> Not Completed</span>
+    <span class="not-completed"> Not Completed</span>
     {% endif %}
   </li>
   {% empty %}
