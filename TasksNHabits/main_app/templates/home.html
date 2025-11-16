@@ -3,12 +3,12 @@
 {% block content %}
 <h1>Hello!</h1>
 <h3>Your Tasks</h3>
-<ul>
+<ul class="task-list">
   {% for task in tasks %}
   <li>
     <a href="{% url 'task_details' task.id %}">{{ task.title }}</a>
     <br>
-    <small>{{ task.description }}</small>
+    <small class="task-desc">{{ task.description }}</small>
   </br>
     {% if task.is_completed %}
     <span class="completed"> Completed</span>
@@ -22,12 +22,12 @@
 </ul>
 
 <h3>Your Habits</h3>
-<ul>
+<ul class="habit-list">
   {% for habit in habits %}
   <li>
     <a href="{% url 'habit_details' habit.id %}">{{ habit.name }}</a>
     <br>
-    <small>{{ habit.description }}</small>
+    <small class="habit-desc">{{ habit.description }}</small>
   </br>
     {% if habit.is_completed %}
     <span class="completed"> Completed</span>
