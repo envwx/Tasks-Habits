@@ -12,13 +12,14 @@ body {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
 }
 
-.brand-logo {
+.brand-title {
+  font-family: 'Pacifico', cursive;
+  font-size: 2rem;
   color: #fff !important;
-  font-weight: 600;
-  font-size: 1.8rem;
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
+  letter-spacing: 1px;
 }
 
 .nav-wrapper ul.right li a {
@@ -77,6 +78,12 @@ main.container {
     margin-top: 20px;
     padding: 20px;
   }
+}
+.nav-wrapper .about-btn {
+  position: absolute;
+  left: 25px;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 h1,
