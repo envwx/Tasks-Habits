@@ -107,7 +107,6 @@ h3 {
   list-style: none;
   padding: 0;
   margin: 0 0 30px 0;
-
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
@@ -115,20 +114,18 @@ h3 {
 
 .task-list li,
 .habit-list li {
-  background: #ffffff;
+  background: #eaeaea;
   width: 260px;
   padding: 15px 18px;
-
   border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
 
 .task-list li:hover,
 .habit-list li:hover {
   transform: translateY(-4px);
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.14);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.22);
 }
 
 .task-list li a,
@@ -195,7 +192,6 @@ h3 {
   font-family: 'Arial', sans-serif;
 }
 
-/* Buttons */
 .btn,
 .task-btn {
   display: inline-block;
@@ -213,30 +209,28 @@ h3 {
   background-color: #45a049;
 }
 
-/* Lists */
 .habit-list,
 .tasks-list {
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
   padding: 0;
-  justify-content: flex-start; /* left to right */
+  justify-content: flex-start;
   margin: 0 auto;
   list-style: none;
 }
 
-/* Items */
 .habit-item,
 .task-item {
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 0.7rem 1.2rem;
-  min-width: 180px; /* slightly longer box */
+  min-width: 180px;
   max-width: 220px;
   border: 1px solid #ddd;
   border-radius: 5px;
-  background-color: #f9f9f9;
+  background-color: #7f7c7c;
   transition: transform 0.2s, box-shadow 0.2s;
   text-align: center;
 }
@@ -244,10 +238,9 @@ h3 {
 .habit-item:hover,
 .task-item:hover {
   transform: translateY(-2px);
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.18);
 }
 
-/* Links */
 .habit-link,
 .task-link {
   text-decoration: none;
@@ -261,7 +254,6 @@ h3 {
   text-decoration: underline;
 }
 
-/* Status Pills */
 .habit-status,
 .task-status {
   font-weight: 600;
@@ -270,7 +262,6 @@ h3 {
   font-size: 0.8rem;
 }
 
-/* Completed / Not Completed colors */
 .completed {
   background: #d3f9d8;
   color: #2e8b57;
@@ -281,7 +272,6 @@ h3 {
   color: #c0392b;
 }
 
-/* Empty lists */
 .no-habits,
 .no-tasks {
   text-align: center;
@@ -390,7 +380,6 @@ h3 {
   box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Title + text styling */
 .task-title {
   font-size: 30px;
   margin-bottom: 15px;
@@ -421,7 +410,6 @@ h3 {
   color: #777;
 }
 
-/* Buttons */
 .btn {
   display: inline-block;
   padding: 8px 14px;
@@ -445,7 +433,6 @@ h3 {
   opacity: 0.85;
 }
 
-/* Back link */
 .back-link {
   display: inline-block;
   margin-top: 20px;
