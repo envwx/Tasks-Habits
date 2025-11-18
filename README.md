@@ -42,9 +42,6 @@ Tasks&Habits, an app to keep on track of your tasks and able to create habits th
   ***
 
 ## ***Future Work***
-*
-*
-*
-
-## ***References ***
-
+* adding a profile page for users
+* an extra feature where user can pick a random task/habit when there's more than +3
+* re styling the pages and much more!
