@@ -11,7 +11,7 @@
       <li class="task-item">
         <a href="{% url 'task_details' task.id %}" class="task-link">{{ task.title }}</a>
         {% if task.is_completed %}
-          <span class="task-status completed">Done!</span>
+          <span class="task-status completed">Task Done!</span>
         {% else %}
           <span class="task-status not-completed">Not completed</span>
         {% endif %}
