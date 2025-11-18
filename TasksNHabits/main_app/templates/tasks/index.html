@@ -14,15 +14,13 @@
           <span class="task-status completed">Task Done!</span>
         {% else %}
           <span class="task-status not-completed">Not completed</span>
-      <p class="task-priority">
+        {% endif %}
+        <p class="task-priority">
       Priority:
           <span class="priority-label priority-{{ task.priority }}">
         {{ task.get_priority_display }}
     </span>
 </p>
-
-
-        {% endif %}
       </li>
     {% empty %}
       <li class="no-tasks">No tasks yet!</li>
