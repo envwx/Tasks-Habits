@@ -21,6 +21,8 @@
         {{ task.get_priority_display }}
     </span>
 </p>
+<p class="task-created">Created: {{ task.created_date }}</p>
+
       </li>
     {% empty %}
       <li class="no-tasks">No tasks yet!</li>

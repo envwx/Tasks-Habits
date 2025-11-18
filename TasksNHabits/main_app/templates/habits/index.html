@@ -5,7 +5,6 @@
   {% if user.is_authenticated %}
     <a href="{% url 'habit_create' %}" class="btn btn-new-habit">+ New Habit</a>
   {% endif %}
-
   <ul class="habit-list">
     {% for habit in habits %}
       <li class="habit-item">
@@ -15,6 +14,7 @@
         {% else %}
           <span class="not-completed">Not completed</span>
         {% endif %}
+        <p class="habit-created">Added: {{ habit.created_date }}</p>
       </li>
     {% empty %}
       <li class="no-habits">No habits yet to show!</li>

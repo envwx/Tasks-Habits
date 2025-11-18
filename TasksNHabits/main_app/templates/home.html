@@ -21,6 +21,8 @@
     {% else %}
     <span class="not-completed"> Not Completed</span>
     {% endif %}
+    <p class="task-created">Created: {{ task.created_date }}</p>
+
   </li>
   {% empty %}
   <li>No tasks yet <a href="{% url 'task_create' %}">Create Task</a></li>
@@ -40,6 +42,8 @@
     {% else %}
     <span class="not-completed"> Not Completed</span>
     {% endif %}
+    <p class="habit-added">Added: {{ habit.created_date }}</p>
+
   </li>
   {% empty %}
   <li>No habits yet <a href="{% url 'habit_create' %}">add a habit</a></li>
