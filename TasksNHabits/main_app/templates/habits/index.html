@@ -11,7 +11,7 @@
       <li class="habit-item">
         <a href="{% url 'habit_details' habit.id %}" class="habit-link">{{ habit.name }}</a>
         {% if habit.is_completed %}
-          <span class="habit-status completed">Done!</span>
+          <span class="habit-status completed">Habit Done!</span>
         {% else %}
           <span class="not-completed">Not completed</span>
         {% endif %}
