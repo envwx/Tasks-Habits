@@ -5,7 +5,7 @@ from .models import Habit
 class TaskForm(forms.ModelForm):
     class Meta:
         model = Task
-        fields = ['title', 'description', 'is_completed']
+        fields = ['title', 'description', 'is_completed', 'priority']
 
 class HabitForm(forms.ModelForm):
     class Meta:

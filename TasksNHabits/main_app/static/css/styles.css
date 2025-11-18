@@ -444,3 +444,54 @@ h3 {
 .back-link:hover {
   text-decoration: underline;
 }
+
+select {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  height: auto !important;
+  padding: 8px !important;
+  border: 1px solid #ccc !important;
+  background-color: white !important;
+  color: black !important;
+}
+
+.priority-value.low {
+  color: green;
+  font-weight: bold;
+}
+
+.priority-value.medium {
+  color: orange;
+  font-weight: bold;
+}
+
+.priority-value.high {
+  color: red;
+  font-weight: bold;
+}
+
+.task-priority {
+  font-size: medium;
+}
+
+.priority-label {
+  font-weight: bold;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+.priority-low {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.priority-medium {
+  background-color: #fff3cd;
+  color: #856404;
+}
+
+.priority-high {
+  background-color: #f8d7da;
+  color: #721c24;
+}

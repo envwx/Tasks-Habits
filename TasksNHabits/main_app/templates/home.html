@@ -10,6 +10,12 @@
     <br>
     <small class="task-desc">{{ task.description }}</small>
   </br>
+  <p class="task-priority">
+      Priority:
+          <span class="priority-label priority-{{ task.priority }}">
+        {{ task.get_priority_display }}
+    </span>
+</p>
     {% if task.is_completed %}
     <span class="completed"> Completed</span>
     {% else %}

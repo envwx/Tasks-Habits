@@ -10,6 +10,15 @@ class Task(models.Model):
     is_completed = models.BooleanField(default=False)
     created_date = models.DateTimeField(auto_now_add=True)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
+    priority = models.CharField(
+        max_length=10,
+    choices=[
+        ('low', 'Low'),
+        ('medium', 'Medium'),
+        ('high', 'High')
+    ],
+        default='medium'
+    )
 
     def __str__(self):
         return self.title

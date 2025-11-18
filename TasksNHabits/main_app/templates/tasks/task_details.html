@@ -13,6 +13,17 @@
       <span class="task-status not-completed">Not completed</span>
     {% endif %}
   </p>
+  <p class="task-priority">
+    Priority:
+    <span class="
+        priority-value
+        {% if task.priority == 'high' %}high{% endif %}
+        {% if task.priority == 'medium' %}medium{% endif %}
+        {% if task.priority == 'low' %}low{% endif %}
+    ">
+        {{ task.get_priority_display }}
+    </span>
+</p>
 
   <p class="task-created">Created: {{ task.created_date }}</p>
 
