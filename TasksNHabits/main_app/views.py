@@ -6,10 +6,20 @@ from .models import Task
 from .forms import TaskForm
 from .models import Habit
 from .forms import HabitForm
+from django.utils import timezone
+from datetime import timedelta
 
 # Create your views here.
 
 def home(request):
+    Task.objects.filter(
+        created_date__lt=timezone.now() -timedelta(days=1),
+        user=request.user
+        ).delete()
+    Habit.objects.filter(
+        created_date__lt=timezone.now() - timedelta(days=1),
+        user=request.user
+        ).delete()
     tasks = Task.objects.filter(user=request.user)
     habits = Habit.objects.filter(user=request.user)
     return render(request, 'home.html', {'tasks': tasks, 'habits': habits})
